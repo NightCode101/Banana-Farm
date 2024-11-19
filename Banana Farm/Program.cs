@@ -12,49 +12,56 @@ Create a program that will ask the user to enter the size of their desired banan
 
  */
 
-namespace Banana_Farm
+using System;
+using System.Linq;
+using System.Collections.Generic;
+
+namespace bananafarm_sheesh
 {
-    internal class Program
+    class Program
     {
-        static void Main(string[] args)
+        static void Main()
         {
-            double banana;
+            double banana_size;
 
-            Console.Write("Enter Banana Size Between 2 - 10: ");
-            banana = Convert.ToDouble(Console.ReadLine());
+            Console.Write("What size of banana do you want?\nChoose from 1-10 Inches:");
+            banana_size = Convert.ToDouble(Console.ReadLine());
 
-            if (banana > 2 && banana <= 4)
-            {   
-                Console.WriteLine("Native Banana");
-            }
-            else if (banana > 2 && banana <= 4 )
+            Console.Write("Your banana variety is: ");
+
+            if (banana_size <= 2 && banana_size != 0)
             {
-                Console.WriteLine("Manila");
+                Console.Write("Native banana");
             }
-            else if (banana > 4 && banana <= 5.5)
-            { 
-                Console.WriteLine("Damilig");
-            }
-            else if (banana > 5.5 && banana <= 7)
+            else if (banana_size > 2 && banana_size <= 4)
             {
-                Console.WriteLine("Barangan");
+                Console.Write("Manila");
             }
-            else if (banana >= 7 && banana <= 8)
+            else if (banana_size > 4 && banana_size <= 5.5)
             {
-                Console.WriteLine("Lakatan");
+                Console.Write("Damilig");
             }
-            else if (banana > 8 && banana <= 10)
+            else if (banana_size >= 5.5 && banana_size <= 7)
+            
+                Console.Write("Barangan");
+            }
+            else if (banana_size >= 7 && banana_size <= 8)
             {
-                Console.WriteLine("Davao");
+                Console.Write("Lakatan");
             }
-            else if (banana > 10)
+            else if (banana_size >= 8 && banana_size <= 10)
             {
-                Console.WriteLine("Jumbo Banana");
+                Console.Write("Davao");
             }
-            else 
+            else if (banana_size > 10)
             {
-                Console.WriteLine("Try Again!");
+                Console.Write("Jumbo banana");
             }
+            else
+            {
+                Console.Write("Invalid input");
+            }
+            Console.ReadLine();
 
         }
     }
